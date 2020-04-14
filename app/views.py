@@ -159,8 +159,8 @@ def demo_data(request):
         return render(request, 'home.html', args)
 
 
-def ppe(request):
-    args = {'title': 'PPE | PneumoScan.ai'}
+def ppe_scan(request):
+    args = {'title': 'PPE Scan | PneumoScan.ai'}
     return render(request, 'ppe.html', args)
 
 
