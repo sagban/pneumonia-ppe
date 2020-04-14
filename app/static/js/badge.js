@@ -9,8 +9,8 @@ var videoSelect = document.querySelector('select#videoSource');
 var canvas = document.querySelector('#canvas');
 var video= document.querySelector('#video');
 var Result = $("#result_strip");
-var width = 600;
-var height = 600*9/16;
+var width = 400;
+var height = 400*9/16;
 
 navigator.mediaDevices.enumerateDevices()
   .then(gotDevices).then(getStream).catch(handleError);
