@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }}</title>
+</head>
+{% include 'head.html' %}
+<body>
+{% include 'navbar.html' %}
+{% load static %}
+<div class="g-bg-position--center g-bg-color--white">
+    <div class="g-container--md g-text-center--xs g-padding-y-20--xs g-margin-t-100--xs">
+        <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--dark g-letter-spacing--2 g-margin-b-25--xs">PneumoScan.ai</p>
+        <h1 class="g-font-size-40--xs g-font-size-50--sm g-font-size-60--md g-color--primary g-letter-spacing--1">About</h1>
+    </div>
+</div>
+<!-- Services -->
+    <div class="container g-padding-y-0--xs">
+        <div class="row">
+            <div class="col-md-5 g-margin-b-10--xs g-margin-b-0--lg">
+                <div class="g-margin-b-30--xs">
+                    <p class="g-color--dark-light g-font-size-16--xs">According to WHO, COVID-19 are a large family of viruses that cause illness ranging from the common cold to more severe diseases such as pneumonia, severe acute respiratory syndrome, and even death. Elderly patients and patients with pre-existing conditions are considered at the highest risk of mortality by Coronavirus. </p>
+                    <p class="g-color--dark-light g-font-size-16--xs">COVID-19 can first be screened for flu-like symptoms for mild cases. For a more serious case with pneumonia-like symptoms, a chest x-ray is a golden standard for physicians and radiologists to check for the infection caused by the virus.  An x-ray imaging will allow your doctor to see your lungs, heart and blood vessels to help determine if you have pneumonia. When interpreting the x-ray, the radiologist will look for white spots in the lungs (called infiltrates) that identify an infection. This exam, together with other vital signs such as temperature, or flu-like symptoms, will also help doctors determine whether a patient is infected with COVID-19 or other pneumonia-related diseases. The standard procedure of pneumonia diagnosis involves a radiologist reviewing chest x-ray images and send the result report to a patient’s primary care physician (PCP), who then will discuss the results with the patient.</p>
+                </div>
+            </div>
+            <div class="col-md-6 g-margin-t-30--xs g-margin-b-60--xs g-margin-b-0--lg">
+                <!-- Masonry Grid -->
+                <div class="row g-row-col--5 g-overflow--hidden js__masonry">
+{#                        <div class="col-xs-6 js__masonry-sizer"></div>#}
+                    <div class="col-xs-6 g-full-width--xs g-margin-b-10--xs g-margin-b-0--sm js__masonry-item">
+                        <div class="wow fadeInDown" data-wow-duration=".3" data-wow-delay=".1s">
+                            <img class="img-responsive" src="{% static 'img/2.jpg' %}" alt="Image">
+                        </div>
+                    </div>
+                    <div class="col-xs-6 g-full-width--xs g-margin-b-10--xs js__masonry-item">
+                        <div class="wow fadeInRight" data-wow-duration=".3" data-wow-delay=".3s">
+                            <img class="img-responsive" src="{% static 'img/1.jpg' %}" alt="Image">
+                        </div>
+                    </div>
+                    <div class="col-xs-6 g-full-width--xs js__masonry-item">
+                        <div class="wow fadeInRight" data-wow-duration=".3" data-wow-delay=".5s">
+                            <img class="img-responsive" src="{% static 'img/3.jpg' %}" alt="Image">
+                        </div>
+                    </div>
+                </div>
+                <!-- End Masonry Grid -->
+            </div>
+            <div class="col-md-12 g-margin-b-30--xs g-margin-b-40--lg">
+                <h4>The Faster way</h4>
+                <p class="g-color--dark-light g-font-size-16--xs">With the patient's expectations of timely results in mind, the cutting edge technology of deep learning such as computer vision can be used to speed up patients’ wait time for pneumonia lab results; patients with positive pneumonia lab results can receive appropriate care sooner, especially in this critical time of the COVID-19 pandemic. <span class="g-color--primary">PneumoScan.ai</span> is a web application with an integrated machine learning model where radiologists can upload x-ray images for the machine learning model to determine with high accuracy if the x-ray image indicates pneumonia.</p>
+            </div>
+        </div>
+
+    </div>
+    <!-- End Services -->
+
+{% include 'footer.html' %}
+{% include 'scripts.html' %}
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }}</title>
+</head>
+{% load static %}
+{% include 'head.html' %}
+<body>
+{% include 'navbar.html' %}
+
+
+<!--========== PROMO BLOCK ==========-->
+    <div class="s-promo-block-v2 g-fullheight--md home" style="">
+        <div class="container g-ver-center--md g-padding-y-80--xs g-padding-y-100--sm">
+            <div class="row">
+                <div class="col-lg-6 col-sm-8 g-hor-centered-row__col g-text-center--xs g-text-left--md g-margin-b-60--xs g-margin-b-0--md">
+                    <div class="s-promo-block-v3 g-margin-b-30--xs g-margin-t-60--xs">
+                        <h1 class="g-font-size-36--xs g-font-size-45--sm g-font-size-55--sm g-font-size-60--lg g-margin-b-40--xs g-color--primary g-font-weight--600">PneumoScan.ai</h1>
+                        <p class="g-font-size-20--xs g-font-size-24--md g-color--dark g-margin-b-0--xs">A full-scaled AI tool for radiology clinics and hospitals that can automate the process of security log-in, PPE safety check for medical staff and assist radiologists determine sign of COVID-19 on chest X-ray images with high accuracy indicates pneumonia.</p>
+                    </div>
+                    <span class="g-display-block--xs g-display-inline-block--lg g-margin-b-10--xs g-margin-b-0--lg">
+                        <a href="/live_scan" class="text-uppercase g-width-200--xs btn-block s-btn s-btn--md s-btn--primary-bg g-radius--50 g-padding-x-50--xs g-margin-b-20--xs">
+                            <span class="g-display-block--xs g-font-size-13--xs">Take a live scan</span>
+                        </a>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">
+        <div class="row g-row-col--0">
+                <div class="col-sm-4">
+                    <div class="g-text-center--xs g-padding-x-30--xs g-padding-x-50--lg g-padding-y-70--xs">
+                        <i class="g-display-block--xs g-font-size-40--sm g-color--primary g-margin-b-30--xs ti-id-badge"></i>
+                        <span class="g-display-block--xs g-font-size-13--sm g-letter-spacing--3 g-margin-b-25--xs">01</span>
+                        <h2 class="g-font-size-26--xs g-font-family--playfair">Employee Badge Scanner</h2>
+                        <p class="g-color--dark">For security purpose, only authorized personel can access to the web-app, which contains patients’ confidential health information (name, date of birth, chest X-ray, medical history…)</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="g-bg-color--sky-light g-text-center--xs g-padding-x-30--xs g-padding-x-50--lg g-padding-y-70--xs">
+                        <i class="g-display-block--xs g-font-size-40--sm g-color--primary g-margin-b-30--xs ti-check-box"></i>
+                        <span class="g-display-block--xs g-font-size-13--sm g-letter-spacing--3 g-margin-b-25--xs">02</span>
+                        <h2 class="g-font-size-26--xs g-font-family--playfair">PPE Safety Check</h2>
+                        <p class="g-color--dark">Due to hospitals/clinics’ strict guidelines in PPE usage, especially during this COVID-19 outbreak, the web-app will automate the PPE testing of the medical staff and patients to minimize the exposure of the disease.</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="g-text-center--xs g-padding-x-30--xs g-padding-x-50--lg g-padding-y-70--xs">
+                        <i class="g-display-block--xs g-font-size-40--sm g-color--primary g-margin-b-30--xs ti-search"></i>
+                        <span class="g-display-block--xs g-font-size-13--sm g-letter-spacing--3 g-margin-b-25--xs">03</span>
+                        <h2 class="g-font-size-26--xs g-font-family--playfair">X-ray Classification</h2>
+                        <p class="g-color--dark">The COVID-Net Large, a pretrained deep convolutional neural network design tailored for the detection of COVID-19 cases from chest radiography images.</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <!-- Parallax -->
+    <div class="s-promo-block-v2 g-bg-position--center js__parallax-window" style="background: url({% static 'img/1.jpg' %}) 50% 0 no-repeat fixed;">
+        <div class="g-container--md g-text-center--xs g-padding-y-80--xs g-padding-y-80--sm">
+
+            <h3 class="g-font-size-35--xs g-font-size-45--sm g-color--white g-font-weight--600">Corona Virus - A Worldwide Pandemic</h3>
+
+            <p class="g-font-size-20--xs g-color--white">As a live update from CNN, COVID-19, previously known as the novel Coronavirus, has killed more than 110,898 people and infected over 1,805,159 people in 144 countries. (Pettersson et al., 2020) This number is continuing to grow every day. In the United States, the COVID has been spreading rapidly. Currently, all 50 states have declared an emergency over the spread of Coronavirus and they reported over 1,000 confirmed cases, and over two dozen fatalities attributed to COVID-19</p>
+
+            <a href="/about" class="text-uppercase s-btn s-btn--md s-btn--white-brd g-radius--50">Learn More</a>
+        </div>
+    </div>
+    <!-- End Parallax -->
+
+
+
+
+        <!--========== END PROMO BLOCK ==========-->
+{% include 'footer.html' %}
+{% include 'scripts.html' %}
+</body>
+</html>

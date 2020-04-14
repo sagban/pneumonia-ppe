@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }}</title>
+</head>
+{% load static %}
+{% include 'head.html' %}
+<body>
+{% include 'navbar.html' %}
+
+
+<!--========== PROMO BLOCK ==========-->
+<div class="s-promo-block-v1">
+    <div class=" g-padding-y-80--xs g-padding-y-100--sm">
+        <div id="container" class="row">
+            <div class="menu-bar g-bg-color--gray-light g-padding-x-20--xs">
+                <div class="camera-select g-width-150--xs">
+                    <label for="videoSource"><i class='ti-video-camera'></i></label>
+                    <select class="" id="videoSource"></select>
+                </div>
+                <div class="snapshot"><button id="startbutton"><i class='ti-camera'></i> Snapshot</button></div>
+            </div>
+            <div class="video-field g-hor-centered-row__col">
+                <video id="video" muted autoplay></video>
+            </div>
+            <canvas id="canvas" class="drawingBuffer"></canvas><br clear="all">
+        </div>
+        <p>*Requires Chrome 30 or later.</p>
+        <div id="result_strip">
+            <ul class="thumbnails"></ul>
+        </div>
+    </div>
+</div>
+
+
+<!--========== END PROMO BLOCK ==========-->
+{% include 'footer.html' %}
+{% include 'scripts.html' %}
+<script src="{% static 'js/ppe.js' %}"></script>
+</body>
+</html>

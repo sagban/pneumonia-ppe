@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }}</title>
+</head>
+{% load static %}
+{% include 'head.html' %}
+<body>
+{% include 'navbar.html' %}
+
+
+<!--========== PROMO BLOCK ==========-->
+
+<div class="s-promo-block-v1">
+
+    <div class="g-container--md g-text-center--xs g-margin-t-120--xs">
+        <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--dark g-letter-spacing--2 g-margin-b-25--xs">PneumoScan.ai</p>
+        <h1 class="g-font-size-40--xs g-font-size-50--sm g-font-size-60--md g-color--primary g-letter-spacing--1">Live Scan</h1>
+    </div>
+
+    <div class="container g-padding-y-40--xs g-padding-y-60--md">
+        <div class="row">
+            <div class="col-lg-7 col-md-6">
+                <img width="100%" src="{% static 'img/background/home.png' %}" alt="">
+            </div>
+            <div class="col-lg-4 col-md-6 g-hor-centered-row__col">
+                <div class="wow fadeInUp" data-wow-duration=".3" data-wow-delay=".1s">
+                    <form onsubmit="return submitForm();" id="formid" enctype="multipart/form-data" class="scanForm center-block g-bg-color--white g-box-shadow__blueviolet-v1 g-padding-x-40--xs g-padding-y-30--xs g-radius--4">
+                        {% csrf_token %}
+                        <div class="g-text-center--xs g-margin-b-30--xs g-margin-t-20--xs">
+                            <h2 class="g-font-size-30--xs g-color--dark">Get ready</h2>
+                        </div>
+                        <div class="g-margin-b-30--xs">
+                            <input type="text" name="name" class="form-control s-form-v4__input" placeholder="* Name">
+                        </div>
+                        <div class="g-margin-b-30--xs">
+                            <input type="email" name="email" class="form-control s-form-v4__input" placeholder="* Email">
+                        </div>
+                        <div class="g-margin-b-30--xs">
+                            <p class="g-margin-l-15--xs g-font-weight--300">* X-ray Images (Max 15)</p>
+                            <input type="file" name="files" class="form-control s-form-v4__input" placeholder="X-ray Image" multiple>
+                        </div>
+                        <div class="g-text-center--xs">
+                            <button class="text-uppercase btn-block s-btn s-btn--md g-width-250--sm g-width-200--xs s-btn--primary-bg g-radius--50 g-padding-x-50--xs">Upload</button>
+                            <div class="message g-font-size-16--xs g-color--primary g-margin-t-10--xs"></div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="results" class="g-padding-y-60--xs">
+    <div class="s-promo-block-v1">
+        <div class="g-bg-position--center g-bg-color--white">
+            <div class="g-container--md g-text-center--xs g-padding-y-20--xs">
+                <h1 class="g-font-size-40--xs g-font-size-50--sm g-color--primary g-letter-spacing--1"></h1>
+                <p class="user g-font-size-14--xs g-font-weight--700 g-color--dark g-letter-spacing--2 g-margin-b-25--xs"></p>
+            </div>
+        </div>
+        <div class="container g-padding-y-20--xs">
+            <div class="row"></div>
+        </div>
+    </div>
+</div>
+        <!--========== END PROMO BLOCK ==========-->
+{% include 'footer.html' %}
+{% include 'scripts.html' %}
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>

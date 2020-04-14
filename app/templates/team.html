@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }}</title>
+</head>
+{% include 'head.html' %}
+<body>
+{% include 'navbar.html' %}
+{% load static %}
+<div class="g-bg-position--center g-bg-color--white">
+    <div class="g-container--md g-text-center--xs g-padding-y-20--xs g-margin-t-100--xs">
+        <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--dark g-letter-spacing--2 g-margin-b-25--xs">PneumoScan.ai</p>
+        <h1 class="g-font-size-40--xs g-font-size-50--sm g-font-size-60--md g-color--primary g-letter-spacing--1">Meet the Team</h1>
+    </div>
+</div>
+<!-- Speakers -->
+<div class="container g-padding-y-60--xs">
+    <div class="row g-overflow--hidden">
+        <div class="col-sm-6 col-md-4 g-full-width--xs g-margin-b-30--xs g-margin-b-0--lg">
+            <div class="center-block g-box-shadow__dark-lightest-v1 g-width-100-percent--xs g-width-250--lg">
+                <img class="img-responsive g-width-100-percent--xs" src="{% static 'img/team/vily.jpg' %}" alt="Image">
+                <div class=" g-padding-x-30--xs g-padding-y-20--xs">
+                    <div class="text-center">
+                        <h4 class="g-font-size-22--xs g-font-size-24--sm g-color--primary g-margin-b-0--xs">Vi Ly</h4>
+                        <p><span class="g-font-weight--400">ML Developer</span><br>Developing the deep learning image recognition framework using Pytorch and computer vision tool.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 g-full-width--xs g-margin-b-30--xs g-margin-b-0--lg">
+            <div class="center-block g-box-shadow__dark-lightest-v1 g-width-100-percent--xs g-width-250--lg">
+                <img class="img-responsive g-width-100-percent--xs" src="{% static 'img/team/sagar.jpg' %}" alt="Image">
+                <div class=" g-padding-x-30--xs g-padding-y-20--xs">
+                    <div class="text-center">
+                        <h4 class="g-font-size-22--xs g-font-size-24--sm g-color--primary g-margin-b-0--xs">Sagar Bansal</h4>
+                        <p><span class="g-font-weight--400">Full-stack Developer</span><br>Designing the web UI and developing and deploying the Pytorch model into fully-functioning Django based web-app.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 g-full-width--xs g-margin-b-30--xs g-margin-b-0--lg">
+            <div class="center-block g-box-shadow__dark-lightest-v1 g-width-100-percent--xs g-width-250--lg">
+                <img class="img-responsive g-width-100-percent--xs" src="{% static 'img/team/mohit.jpg' %}" alt="Image">
+                <div class=" g-padding-x-30--xs g-padding-y-20--xs">
+                    <div class="text-center">
+                        <h4 class="g-font-size-22--xs g-font-size-24--sm g-color--primary g-margin-b-0--xs">Mohit Gadkari</h4>
+                        <p><span class="g-font-weight--400">Technical Researcher</span><br>Researching medical background and technical details for the project development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!-- End Speakers -->
+
+{% include 'footer.html' %}
+{% include 'scripts.html' %}
+</body>
+</html>

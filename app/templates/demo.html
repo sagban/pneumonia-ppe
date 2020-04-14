@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }}</title>
+</head>
+{% load static %}
+{% include 'head.html' %}
+<body>
+{% include 'navbar.html' %}
+
+
+<!--========== PROMO BLOCK ==========-->
+
+<div class="s-promo-block-v1">
+
+    <div class="g-container--md g-text-center--xs g-margin-t-120--xs">
+        <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--dark g-letter-spacing--2 g-margin-b-25--xs">TRY WITH EXAMPLE IMAGES</p>
+        <h1 class="g-font-size-40--xs g-font-size-50--sm g-font-size-60--md g-color--primary g-letter-spacing--1">Demo</h1>
+    </div>
+    <p class="message"></p>
+
+    <div class="container g-padding-y-40--xs g-padding-y-60--md">
+        <div class="row g-margin-b-30--xs">
+            <div class="col-sm-6 col-md-3 g-full-width--xs g-margin-b-30--xs g-margin-b-0--lg">
+
+                <div class="center-block g-box-shadow__dark-lightest-v1 g-width-100-percent--xs g-width-250--lg">
+                    <img onclick="submitDemo('{% static 'img/sample/IM1.jpeg' %}')" class="hover img-responsive g-width-100-percent--xs" src="{% static 'img/sample/IM1.jpeg' %}" alt="Image">
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 g-full-width--xs g-margin-b-30--xs g-margin-b-0--lg">
+                <div class="center-block g-box-shadow__dark-lightest-v1 g-width-100-percent--xs g-width-250--lg">
+                    <img onclick="submitDemo('{% static 'img/sample/IM2.jpeg' %}')" class="hover img-responsive g-width-100-percent--xs" src="{% static 'img/sample/IM2.jpeg' %}" alt="Image">
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 g-full-width--xs g-margin-b-30--xs g-margin-b-0--lg">
+                <div class="center-block g-box-shadow__dark-lightest-v1 g-width-100-percent--xs g-width-250--lg">
+                    <img onclick="submitDemo('{% static 'img/sample/IM3.jpeg' %}')" class="hover img-responsive g-width-100-percent--xs" src="{% static 'img/sample/IM3.jpeg' %}" alt="Image">
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 g-full-width--xs g-margin-b-30--xs g-margin-b-0--lg">
+                <div class="center-block g-box-shadow__dark-lightest-v1 g-width-100-percent--xs g-width-250--lg">
+                    <img onclick="submitDemo('{% static 'img/sample/IM4.jpeg' %}')" class="hover img-responsive g-width-100-percent--xs" src="{% static 'img/sample/IM4.jpeg' %}" alt="Image">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-3 g-full-width--xs g-margin-b-30--xs g-margin-b-0--lg">
+                <div class="center-block g-box-shadow__dark-lightest-v1 g-width-100-percent--xs g-width-250--lg">
+                    <img onclick="submitDemo('{% static 'img/sample/IM5.jpeg' %}')" class="hover img-responsive g-width-100-percent--xs" src="{% static 'img/sample/IM5.jpeg' %}" alt="Image">
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 g-full-width--xs g-margin-b-30--xs g-margin-b-0--lg">
+                <div class="center-block g-box-shadow__dark-lightest-v1 g-width-100-percent--xs g-width-250--lg">
+                    <img onclick="submitDemo('{% static 'img/sample/IM6.jpeg' %}')" class="hover img-responsive g-width-100-percent--xs" src="{% static 'img/sample/IM6.jpeg' %}" alt="Image">
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 g-full-width--xs g-margin-b-30--xs g-margin-b-0--lg">
+                <div class="center-block g-box-shadow__dark-lightest-v1 g-width-100-percent--xs g-width-250--lg">
+                    <img onclick="submitDemo('{% static 'img/sample/IM7.jpeg' %}')" class="hover img-responsive g-width-100-percent--xs" src="{% static 'img/sample/IM7.jpeg' %}" alt="Image">
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 g-full-width--xs g-margin-b-30--xs g-margin-b-0--lg">
+                <div class="center-block g-box-shadow__dark-lightest-v1 g-width-100-percent--xs g-width-250--lg">
+                    <img onclick="submitDemo('{% static 'img/sample/IM8.jpeg' %}')" class="hover img-responsive g-width-100-percent--xs" src="{% static 'img/sample/IM8.jpeg' %}" alt="Image">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="results" class="g-padding-y-60--xs">
+    <div class="s-promo-block-v1">
+        <div class="g-bg-position--center g-bg-color--white">
+            <div class="g-container--md g-text-center--xs g-padding-y-20--xs">
+                <h1 class="g-font-size-40--xs g-font-size-50--sm g-color--primary g-letter-spacing--1"></h1>
+                <p class="user g-font-size-14--xs g-font-weight--700 g-color--dark g-letter-spacing--2 g-margin-b-25--xs"></p>
+            </div>
+        </div>
+        <div class="container g-padding-y-20--xs">
+            <div class="row"></div>
+        </div>
+    </div>
+</div>
+        <!--========== END PROMO BLOCK ==========-->
+{% include 'footer.html' %}
+{% include 'scripts.html' %}
+<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>
