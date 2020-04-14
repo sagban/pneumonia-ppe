@@ -9,7 +9,8 @@ var videoSelect = document.querySelector('select#videoSource');
 var canvas = document.querySelector('#canvas');
 var video= document.querySelector('#video');
 var Result = $("#result_strip");
-
+var width = 400;
+var height = 400*9/16;
 
 navigator.mediaDevices.enumerateDevices()
   .then(gotDevices).then(getStream).catch(handleError);
@@ -45,7 +46,8 @@ function getStream() {
     });
   }
   var widthVideo = function(){
-      return window.innerWidth;
+      return width;
+      // return window.innerWidth;
     // if (window.innerWidth < 600){
     //   return window.innerWidth;
     // }
@@ -55,18 +57,16 @@ function getStream() {
   };
    var heightVideo = function(){
 
-       return window.innerHeight;
+       return height;
+       // return window.innerHeight;
        // if (window.innerHeight < 800 && window.innerWidth < 600){
-    //
-    // }
-    // else{
-    //   return 600;
-    // }
+       //
+       //  }
+       //  else{
+       //    return 600;
+       //  }
   };
   var constraints = {
-    // audio: {
-    //   deviceId: {exact: audioSelect.value}
-    // },
     video: {
       deviceId: {exact: videoSelect.value},
         width:widthVideo(),
@@ -84,22 +84,24 @@ function gotStream(stream) {
 }
 
 function handleError(error) {
-  console.log('Error: ', error);
+  $(".message").html(error);
 }
 
 function takepicture() {
 
-  var widthVideo = function(){
-    return window.innerWidth;
+  // $('html, body').animate({scrollTop: $("video").offset().top - 100 }, 500);
+    $("#startButton span").html("Stop");
+    var widthVideo = function(){
+    return width;
   };
    var heightVideo = function(){
-    return window.innerHeight;
+    return height;
   };
    var width = widthVideo();
    var height = heightVideo();
     canvas.width = width;
     canvas.height = height;
-    canvas.getContext('2d').drawImage(video, 0, 0, 600, 600*9/16);
+    canvas.getContext('2d').drawImage(video, 0, 0, width, height);
     var dataUrl = canvas.toDataURL('image/jpg');
     console.log(dataUrl);
     $.ajax({
@@ -119,6 +121,7 @@ function takepicture() {
                 if(diff > 100000){
 
                     Result.html('Try Again : Time Out');
+                    $("#startButton span").html("Start");
                     clearTimeout(interval);
 
                 }
@@ -147,9 +150,12 @@ function takepicture() {
             console.log('Failed')
         });
 }
-startbutton.addEventListener('click', function(ev){
+
+
+startButton.addEventListener('click', function(ev){
     takepicture();
     Result.html("Searching..");
     ev.preventDefault();
     }, false
 );
+
