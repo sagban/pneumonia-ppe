@@ -4,7 +4,9 @@ import base64
 import os
 from PIL import Image
 from io import BytesIO
+import cv2
 import matplotlib.pyplot as plt
+from matplotlib.image import imread
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import matplotlib as mpl
 import numpy as np
@@ -25,8 +27,8 @@ def validate_files(files):
 def img_to_results(file):
 
     classes = ['Normal', 'Pneumonia']
-    img, class_activation, pred = p.predict_img(file)
-    pred = classes[pred.item()]
+    img = file
+    pred = classes[0]
     try:
         name = file.name.split("/")
     except AttributeError:
@@ -38,33 +40,16 @@ def img_to_results(file):
         'pred': pred,
     }
 
-    mpl.use('Agg')
-    plt.ioff()
-    plt.axis('off')
-    plt.imshow(class_activation, cmap='jet', alpha=1, aspect='equal')
-    plt.imshow(img, alpha=0.55, aspect='equal')
-    plt.title(name + ' - ' + pred)
-    plt.tight_layout()
-    fig = plt.gcf()
-    # canvas = FigureCanvas(fig)
+    # mpl.use('Agg')
+    # plt.ioff()
+    # plt.axis('off')
+    fig = Image.open(img)
     buf = BytesIO()
-    fig.savefig(buf, format='png', bbox_inches='tight')
+    fig.save(buf, format='png', bbox_inches='tight')
     buf.seek(0)
     string = base64.b64encode(buf.read())
-
-    # img = Image.fromarray((img * 255).astype(np.uint8))
-    # cm = plt.get_cmap('jet')
-    # colored_image = cm(class_activation)
-    # class_activation = Image.fromarray((colored_image[:, :, :3] * 255).astype(np.uint8))
-    #
-    # img = img.convert('RGBA')
-    # class_activation = class_activation.convert('RGBA')
-    # new_img = Image.blend(img, class_activation, 0.55)
-    # buffered = BytesIO()
-    # new_img.save(buffered, format="PNG")
-    # string = base64.b64encode(buffered.getvalue())
-
     prediction['image'] = string.decode("utf-8")
+    print(prediction['image'])
     return prediction
 
 
@@ -107,6 +92,13 @@ def upload_data(request):
 
             images = []
             for i in range(len(files)):
+                # img = Image.open(files[i])
+                # # img.show()
+                # buf = BytesIO()
+                # img.save(buf, format='png', bbox_inches='tight')
+                # buf.seek(0)
+                # string = base64.b64encode(buf.read())
+                # print(string)
                 prediction = img_to_results(files[i])
                 images.append(prediction)
 
