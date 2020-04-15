@@ -40,7 +40,7 @@
                             <canvas style="display: none" id="canvas" class="drawingBuffer"></canvas><br clear="all">
                         </div>
                         <div class="g-text-center--xs">
-                            <button id="startButton" onclick="takepicture()" class="text-uppercase btn-block s-btn s-btn--md g-width-250--sm g-width-200--xs s-btn--primary-bg g-radius--50 g-padding-x-50--xs"><i class="ti-video-camera g-margin-r-5--xs"></i> <span>Start</span></button>
+                            <button id="startButton" onclick="start()" class="text-uppercase btn-block s-btn s-btn--md g-width-250--sm g-width-200--xs s-btn--primary-bg g-radius--50 g-padding-x-50--xs"><i class="ti-video-camera g-margin-r-5--xs"></i> <span>Start</span></button>
                             <div class="message g-font-size-16--xs g-color--primary g-margin-t-10--xs"></div>
                             <p>*Requires Chrome 30 or later.</p>
                         </div>
@@ -57,19 +57,22 @@
     <div class="s-promo-block-v1">
         <div class="g-bg-position--center g-bg-color--white">
             <div class="g-container--md g-text-center--xs g-padding-y-20--xs">
-                <h1 class="g-font-size-40--xs g-font-size-50--sm g-color--primary g-letter-spacing--1"></h1>
-                <p class="user g-font-size-14--xs g-font-weight--700 g-color--dark g-letter-spacing--2 g-margin-b-25--xs"></p>
+                <h1 class="g-font-size-40--xs g-font-size-50--sm g-color--primary g-letter-spacing--1">Badge Id Found</h1>
+                <p class="user g-font-size-14--xs g-font-weight--700 g-color--dark g-letter-spacing--2 g-margin-b-25--xs">Successfully Authenticated</p>
             </div>
         </div>
         <div class="container g-padding-y-20--xs">
-            <div class="row"></div>
+            <div class="row">
+                <div id="#result_strip" class="text-center">Proceed to net step <br>
+                                        <a href="/ppe_scan" class="g-width-150--xs text-uppercase s-btn s-btn--xs s-btn--primary-brd g-radius--50 g-margin-t-20--xs">PPE scan</a>
+</div>
+            </div>
         </div>
     </div>
 </div>
         <!--========== END PROMO BLOCK ==========-->
 {% include 'footer.html' %}
 {% include 'scripts.html' %}
-<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
 <script src="{% static 'js/badge.js' %}"></script>
 </body>
 </html>

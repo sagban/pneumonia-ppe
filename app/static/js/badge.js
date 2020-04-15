@@ -90,6 +90,7 @@ function handleError(error) {
 function takepicture() {
 
   // $('html, body').animate({scrollTop: $("video").offset().top - 100 }, 500);
+    $("#results").show();
     $("#startButton span").html("Stop");
     var widthVideo = function(){
     return width;
@@ -103,6 +104,7 @@ function takepicture() {
     canvas.height = height;
     canvas.getContext('2d').drawImage(video, 0, 0, width, height);
     var dataUrl = canvas.toDataURL('image/jpg');
+    Result.html("Trying..")
     console.log(dataUrl);
     $.ajax({
     type: "POST",
@@ -159,3 +161,8 @@ startButton.addEventListener('click', function(ev){
     }, false
 );
 
+function start() {
+    $("#startButton span").html("Stop");
+    $('html, body').animate({scrollTop: $("#results").offset().top }, 500);
+
+}
