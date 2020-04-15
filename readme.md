@@ -53,7 +53,20 @@ $ python manage.py runserver
 If everything worked fine >>
 Congratulations, you setup the pneumoscan project in your pc.
 
+### Description
+Here, is the description of the folders containing files used for the deployemnt of the pre-trained model (covid-19 model), VitechLab’s PPE Detector for Laboratory Safety (curated model) and Quantipil’s Barcode/QR-code Scanner (curated model) from AWS Marketplace.
+1. **covid-19-model/**
+This folder containes the files related to the pre-trained tensorflow model deployed on the aws sagemaker. We used the tesnsorflow model checkpoints o deploy a TensorFlow model using Amazon SageMaker, taking advantage of Amazon SageMaker deployment capabilities, such as selecting the type and number of instances, performing A/B testing, and Auto Scaling.
+There are two main files here, 
+```covid19-lambda-function.py covid-endpoint.ipynb```
+**covid-endpoint.ipynb**: It is used for the creating the endpoints from the Tensorflow saved checkpoints and them converting to the Tensorflow Protobuff. After that model is move to the S3 bucket for further deployment of endpoints using the sagemaker.
+**covid19-lambda-function**: This file containes the code used for the setting up the aws lambda function to invoke the created endpoints.
 
+2. **ppe-check**
+This folder containes the files related to the VitechLab’s PPE Detector for Laboratory Safety (curated model) from the marketplace.
+
+3. **badge-scan**
+This folder containes the files related to the Quantipil’s Barcode/QR-code Scanner (curated model) from the marketplace.
 
 
 
