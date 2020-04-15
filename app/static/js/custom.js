@@ -46,7 +46,11 @@ function submitDemo(val) {
             processData: false,
             success: function(data) {
                 $('.message').text("");
-                if(data.status === 1){
+                if(data.status === 0){
+                    $('html, body').animate({scrollTop: $("#results").offset().top - 50}, 500);
+                    $("#results .user").text(data.message);
+                }
+                else if(data.status === 1){
                     $('html, body').animate({scrollTop: $("#results").offset().top - 50}, 500);
                     var user = data.username;
                     var email = data.email;

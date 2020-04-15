@@ -1,6 +1,9 @@
 
 'use strict';
 
+$(function () {
+    $("#results").hide();
+});
 //initiate the time
 var date1 = new Date();
 var videoElement = document.querySelector('video');
@@ -104,17 +107,27 @@ function takepicture() {
     canvas.height = height;
     canvas.getContext('2d').drawImage(video, 0, 0, width, height);
     var dataUrl = canvas.toDataURL('image/jpg');
-    Result.html("Trying..")
+    Result.html("Trying..");
     console.log(dataUrl);
     $.ajax({
     type: "POST",
-    url: "/decode/",
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    crossDomain: true,
+    url: "https://v91bnrsr4k.execute-api.us-west-2.amazonaws.com/prod",
     data: {
-    imgBase64: dataUrl
+        data: dataUrl
     }
     }).done(function(data) {
 
-        if(data.code =='NO BarCode Found'){
+        $("#results").show();
+        $('html, body').animate({scrollTop: $("#results").offset().top }, 500);
+        if(data.status === 0){
+            Result.html(data.message);
+        }
+
+        else if(data.code =='NO BarCode Found'){
             console.log("Trying..")
             var interval = setTimeout(function(){
 

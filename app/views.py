@@ -4,6 +4,7 @@ import base64
 import os
 from PIL import Image
 from io import BytesIO
+import json
 import cv2
 import matplotlib.pyplot as plt
 from matplotlib.image import imread
@@ -159,3 +160,15 @@ def ppe_scan(request):
 def badge_scan(request):
     args = {'title': 'Badge Scan | PneumoScan.ai'}
     return render(request, 'badge.html', args)
+
+
+def decode(request):
+    if request.POST:
+        decodedData = request.POST['imgBase64']
+        print(decodedData)
+        if decodedData:
+            json_data = json.dumps(decodedData)
+            print(json_data)
+            return JsonResponse(json_data, safe=False)
+
+        return JsonResponse({"code": 'NO BarCode Found'})

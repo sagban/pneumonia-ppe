@@ -28,6 +28,6 @@ urlpatterns = [
     path('ppe_scan/', v.ppe_scan),
     path('demo/', v.demo),
     path('uploadajax/', v.upload_data),
-    path('demoajax/', v.demo_data),
+    path('decode/', v.decode),
     path('admin/', admin.site.urls),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
