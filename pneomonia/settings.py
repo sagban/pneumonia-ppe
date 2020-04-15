@@ -25,7 +25,7 @@ SECRET_KEY = '#px*utz84mn*(2#i7s_w#^%*7-4d6cr%#q#t(76vb8s$l6)vbt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pneumonia-ppe.eba-6cih4jqh.us-west-2.elasticbeanstalk.com']
 
 
 # Application definition
