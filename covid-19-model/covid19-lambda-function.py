@@ -21,7 +21,7 @@ def lambda_handler(event, context):
     t = np.frombuffer(imgdata, np.float32)
     data = np.reshape(t, (1, 224, 224, 3))
     payload = json.dumps(data.tolist())
-    response = client.invoke_endpoint(EndpointName=ENDPOINT_NAME, ContentType='application/json', Body=payload)
+    response = runtime.invoke_endpoint(EndpointName=ENDPOINT_NAME, ContentType='application/json', Body=payload)
     prediction = json.loads(response['Body'].read().decode())
     pred_list = prediction['predictions'][0]
     max_index = pred_list.index(max(pred_list))
